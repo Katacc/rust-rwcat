@@ -32,14 +32,14 @@ fn main() {
                 },
             }
 
-        } else if &args[1] == "-r" {
+        } else if &args[1] == "-r" && args.len() == 3 {
             let path = &args[2];
 
             match read_file(&path) {
                 Ok(_) => {
                 },
-                Err(e) => {
-                    println!("Reading failed {e}");
+                Err(_) => {
+                    println!("Reading failed");
                 },
             }
 
@@ -63,15 +63,16 @@ fn main() {
 
 
 fn read_file(path: &String) -> std::io::Result<()> {
-    println!("Contents of {path}:");
-    println!("---");
 
-    let contents = fs::read_to_string(&path)
-        .expect("Failed reading file...");
-
-    println!("{contents}");
-
-    Ok(())
+    match fs::read_to_string(&path) {
+        Ok(contents) => {
+            println!("{contents}");
+        },
+        Err(_) => {
+            println!("Error accessing file (file missing?)");
+        }
+    }
+Ok(())
 }
 
 
