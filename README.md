@@ -4,7 +4,7 @@ My rust written cat styled program that has read and write append commands
 
 
 ## Usage
----
+
 ```sh
 rwcat -r test.txt
 rwcat -w test.txt "This string will be appended to the text file"
@@ -13,7 +13,7 @@ rwcat -w test.txt "This string will be appended to the text file"
 The program generates the missing file if you write to a file that does not exist.
 
 ## Compiling
----
+
 Compile using cargo
 ```sh
 git clone https://gitlab.com/Katacc/rust-rwcat.git
