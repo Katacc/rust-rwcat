@@ -37,7 +37,6 @@ fn main() {
 
             match read_file(&path) {
                 Ok(_) => {
-                    println!("Reading succesfull");
                 },
                 Err(e) => {
                     println!("Reading failed {e}");
@@ -70,7 +69,7 @@ fn read_file(path: &String) -> std::io::Result<()> {
     let contents = fs::read_to_string(&path)
         .expect("Failed reading file...");
 
-    println!("{contents}\n ---");
+    println!("{contents}");
 
     Ok(())
 }
