@@ -3,6 +3,8 @@ use std::fs;
 pub fn read_file(path: &String, query_string: &String) -> std::io::Result<()> {
 
         let mut line_number = 0;
+        let lower_query: String = query_string.trim().to_lowercase();
+
 
         match fs::read_to_string(&path) {
             Ok(contents) => {
@@ -11,8 +13,9 @@ pub fn read_file(path: &String, query_string: &String) -> std::io::Result<()> {
                 } else {
                     let contents_lines = contents.lines();
                     for line in contents_lines {
+                        let lower_line: String = line.trim().to_lowercase();
                         line_number += 1;
-                        if line.contains(query_string) {
+                        if lower_line.contains(&lower_query) {
                             println!("{line_number}: {line}");
                         }
                     }
