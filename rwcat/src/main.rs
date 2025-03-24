@@ -8,8 +8,7 @@ use crate::operations:: {
 
 #[derive(Parser)]
 #[command(author, version, about, long_about = None,
-override_usage = "\
-rwcat <COMMAND> [OPTIONS]")]
+override_usage = "rwcat <COMMAND> [OPTIONS]")]
 struct Cli {
 
     #[command(subcommand)]
@@ -20,9 +19,10 @@ struct Cli {
 #[derive(Subcommand)]
 enum Commands {
     /// <PATH> [QUERY]      -- Read from file
+    #[command(visible_alias = "-r")]
     Read {
 
-        /// Path tot the file to read from
+        /// Path to the file to read from
         #[arg(help = "The path to the file to read from")]
         path: String,
 
@@ -31,6 +31,7 @@ enum Commands {
         query: String,
     },
     /// <PATH> <CONTENT>    -- Write to file
+    #[command(visible_alias = "-w")]
     Write {
 
         /// The path to the file to write to
@@ -43,6 +44,8 @@ enum Commands {
     },
 
 }
+
+
 
 fn main() {
 
