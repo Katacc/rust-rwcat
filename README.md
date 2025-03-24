@@ -6,7 +6,8 @@ My rust written cat styled program that has read and write append commands
 ## Usage
 
 ```sh
-rwcat -r test.txt
+rwcat -r test.txt           # Just read the whole file
+rwcat -r test.txt test      # Query "test" from test.txt, return lines that has "test" in them
 rwcat -w test.txt "This string will be appended to the text file"
 ```
 
