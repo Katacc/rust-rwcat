@@ -7,9 +7,11 @@ stages:
 build:
   stage: build
   script:
+    - cd rwcat
     - cargo build --release
 
 test:
   stage: test
   script:
+    - cd rwcat
     - cargo test
