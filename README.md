@@ -1,6 +1,6 @@
 # rust-rwcat
 
-![GitLab pipeline status](https://gitlab.com/Katacc/rust-rwcat/badges/main/pipeline.svg)
+![GitLab pipeline status](https://gitlab.com/Katacc/rust-rwcat/badges/main/pipeline.svg?ref=main)
 ![GitLab license](https://gitlab.com/Katacc/rust-rwcat/badges/main/license.svg)
 
 `rust-rwcat` is a Rust-written `cat`-styled program that provides commands for reading and appending to files.
@@ -57,27 +57,6 @@ rwcat write <file_path> <content>
   ```
 
 > **Note**: If the file does not exist, it will be created automatically.
-
----
-
-## Contributing
-
-We welcome contributions! Follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a feature branch:
-   ```sh
-   git checkout -b feature-name
-   ```
-3. Commit your changes:
-   ```sh
-   git commit -m "Add feature-name"
-   ```
-4. Push to your branch:
-   ```sh
-   git push origin feature-name
-   ```
-5. Open a merge request.
 
 ---
 
